@@ -1,0 +1,77 @@
+---
+title: Installing Dynatrace Ruxit
+owner: Partners
+---
+
+This topic provides instructions for how to install and configure the tile. Typically this includes procedures for how to download the tile from PivNet, install it on Ops Manager, configure the tile, and do any required third-party configuration. Screenshots should be provided where necessary. Consult the following format:
+
+Install via Pivotal Ops Manager
+ 
+Download the product file from Pivotal Network (edit link).
+Upload the product file to your Ops Manager installation by clicking Import a Product and navigate to the downloaded product file. Dynatrace Ruxit Service Broker appears under Available Products.
+
+Click Add next to the uploaded Dynatrace Ruxit Service Broker in the Ops Manager Available Products view to add Ruxit to your staging area.
+Click the newly added tile to review any configurable options.
+Click Apply Changes to install the service.
+Upgrading to the Latest Version
+Not applicable for version 1.0.
+Configuring the Dynatrace Ruxit Service Broker Tile 
+
+Login into Pivotal Ops Manager 
+Click on “Import a Product” and import the Dynatrace Ruxit Service Broker Tile
+Select the Dynatrace Ruxit Service Broker option
+Click Add on the Dynatrace Ruxit Service Broker Tile
+
+Select the Dynatrace Ruxit Service Broker Tile
+
+Configure the Dynatrace Ruxit Service Broker Tile
+Assign the availability zones and networking
+
+Add dynamic service plans for all your Ruxit environments by clicking Add in the Dynamic Service Plans section
+
+Create a separate service plan for each Ruxit environment.
+Provide your {environmentId} and {token} for your environment. You can get this information in your Ruxit dashboard under the “Deploy Ruxit” section.
+Provide the server URL to connect the Ruxit Agent to. For Ruxit SaaS this is `https://{environmentID}.live.ruxit.com:443/communication` 
+
+In the Service Access section, select the Enable global access… checkbox to publish your services to all users in the Services Marketplace.
+
+Return to the Installation Dashboard and make sure the tile is green
+Click Apply changes to install Dynatrace Ruxit Service Broker
+
+
+
+Other Configurations / Third-Party Configurations
+none
+
+Dynatrace Ruxit Screens
+
+Dynatrace Ruxit offers multiple views of application and deployment insights, including the following:
+
+Common metrics on a service like response times and failure rate
+
+
+
+
+Real time model of a request flow through your services
+
+
+
+
+
+
+Detailed response time contribution break-down for service methods
+
+
+
+
+Detailed waterfall performance break-down for webpages
+
+
+
+
+Java Managed Memory insights
+
+
+
+
+Detailed CPU consumption break-down per process

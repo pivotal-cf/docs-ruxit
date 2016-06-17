@@ -1,40 +1,18 @@
 ---
-title: Dynatrace Ruxit Pivotal Cloud Foundry&reg; 
+title: Dynatrace Ruxit Service Broker for Pivotal Cloud Foundry&reg; 
 owner: Partners
 ---
 
-This documentation is for the Pivotal Cloud Foundry&reg; Dynatrace Ruxit tile.
+This documentation describes the Dynatrace Ruxit Service Broker tile for Pivotal Cloud Foundry&reg; (PCF). 
 
-Dynatrace Ruxit is a smart application performance monitoring solution for highly dynamic and distributed application environments as they run on top of Pivotal Cloud Foundry.
+Dynatrace Ruxit is an application performance monitoring solution that you can use for your PCF applications. The PCF tile for Dynatrace Ruxit installs the Dynatrace Ruxit Service Broker as an application, registers it as a Service Broker on Cloud Foundry, and exposes its service plans on the Marketplace. This simplifies the integration of Dynatrace Ruxit with your Cloud Foundry applications. 
 
-The Dynatrace Ruxit Service Broker Tile includes a Service Broker for Pivotal Cloud Foundry and the BOSH deployment to install the Service Broker on the local PCF installation. The Service Broker will allow Dynatrace Ruxit to be advertised as an add-on service in the Pivotal Cloud Foundry Marketplace, and therefore provision-able and bindable to any app by authorized users within an org. The service broker requires access to an existing Ruxit account which can be configured via the Service Broker's configuration settings. If you do not have a Ruxit account, feel free to sign up for a free trial at: http://www.dynatrace.com/en/ruxit/try-now/
-
-
-Ruxit automatically detects clustered apps and gives deep visibility into your transaction flows, from the clicks in your users’ browsers to all your communicating microservices, down to the database and code-level for all your monitored apps in Pivotal Cloud Foundry. By means of smartscape technology Ruxit automatically models and adapts real-time dependency graphs of all your pushed apps and connected databases. Whenever Ruxit detects an anomaly in your environment you will be directed to the actual root cause of the anomaly by leveraging the auto-built dependency graphs and all the monitoring data that have been collected. 
-
-### Dynatrace Ruxit Service Broker
-
-A Service Broker allows Cloud Foundry applications to bind to services and consume the services easily from App Manager UI or command line. The Dynatrace Ruxit Service Broker will enable you to use one or more Ruxit environments and is deployed as a Java Application on Cloud Foundry. The Broker exposes the Ruxit service on the Cloud Foundry Marketplace and allows users to directly create a service instance and bind it to their applications either from the Pivotal Apps Manager Console or from the command line. 
-
-The PCF (Pivotal Cloud Foundry) Tile for Dynatrace Ruxit installs the Dynatrace Ruxit Service Broker as an application and registers it as a Service Broker on Cloud Foundry and exposes its service plans on the Marketplace. This makes the installation and subsequent use of Ruxit on your Cloud Foundry applications simple and easy. 
-
-Customers interested in using Dynatrace Ruxit can obtain a 30 day free trial license from Dynatrace Ruxit website.
-
-### Key Features
-
-* **AI Powered**: Don’t spend valuable time hunting for problems, focus on fixing them! Dynatrace Ruxit Artificial Intelligence locates performance issues and pinpoints underlying root causes proactively to ensure customer satisfaction in real time.
-
-* **Analytical**: Discover what you don’t know. Dynatrace Ruxit smartscape technology gives you full operational insight and the ability to oversee and manage web scale applications. 
-
-* **Self learning**: Dynatrace Ruxit automatically learns your environment and understands the complexity of your distributed applications. No more worry about timely troubleshooting. 
-
-* **SaaS convenience with data on-prem**: Keep your data on-premises but get first-class SaaS experience. Dynatrace Ruxit is available as SaaS offering but also as a managed solution on your own infrastructure.
-
+The Dynatrace Ruxit Service Broker tile requires access to an existing Ruxit account. If you do not have a Ruxit account, you can sign up for a 30 day free trial at: http://www.dynatrace.com/en/ruxit/try-now/.
 
 ## <a id="snapshot"></a>Product Snapshot
 
 <dl>
-<dt>Current Dynatrace Ruxit Service Broker Tile for Pivotal Cloud Foundry Details:</dt>
+<dt>Current Dynatrace Ruxit Service Broker tile for Pivotal Cloud Foundry&reg; Details:</dt>
 <dd><strong>Version</strong>: 1.0 </dd>
 <dd><strong>Release Date</strong>: 06-20-2016</dd>
 <dd><strong>Software component version</strong>: Dynatrace Ruxit Service Broker 1.0</dd>
@@ -44,16 +22,58 @@ Customers interested in using Dynatrace Ruxit can obtain a 30 day free trial lic
 <dd><strong>AWS support?</strong> Yes</dd>
 </dl>
 
-## <a id="reqs"></a> Requirements
+## <a id="ruxit"></a>Dynatrace Ruxit 
 
-You will need an existing Ruxit environment when specifying your service plans.
+### <a id="overview"></a> Overview
+
+Ruxit detects clustered apps and provides visibility into their transaction flows, from the user level to the database and code level. Ruxit also creates and adapts real-time dependency graphs of all your pushed apps and connected databases. If Ruxit detects an anomaly in your environment, it directs you to the root cause with these dependency graphs and the data it collects. 
+
+The following list describes the key features of Ruxit:
+
+* **AI Powered**: Ruxit Artificial Intelligence locates performance issues and pinpoints underlying root causes in real time.
+
+* **Analytical**: Ruxit gives you operational insight and the ability to oversee and manage web-scale applications. 
+
+* **Self learning**: Ruxit learns your environment and understands the complexity of your distributed applications.
+
+* **Provides SaaS convenience with data on-prem**: Ruxit is available as a SaaS offering, but also as a managed solution on your own infrastructure.
+
+See the Dynatrace website for more details on [Ruxit](http://www.dynatrace.com/en/ruxit). 
+
+### <a id="vies"></a> Data Views
+
+Dynatrace Ruxit offers multiple views for application and deployment data, including the following:
+
+* Common metrics for a service, such as response time and failure rate
+	<%= image_tag "common-metrics.png" %>
+
+* Real time model of a request flow through your services
+	<%= image_tag "real-time-model.png" %>
+
+* Detailed response time contribution breakdown for service methods
+	<%= image_tag "detailed-response-dashboard.png" %>
+
+* Detailed waterfall performance breakdown for webpages.
+	<%= image_tag "waterfall-analytics.png" %>
+
+* Java Managed Memory metrics
+	<%= image_tag "java-managed-memory.png" %>
+
+* Detailed CPU consumption break-down per process
+	<%= image_tag "cpu-consumption.png " %>
+
+
+
+## <a id="upgrade"></a> Upgrade to the Latest Version
+
+Not applicable for version 1.0. See the [Installing Ruxit](./installing.html) topic for installation instructions. 
 
 ## <a id="limitations"></a>Limitations
 
-The Dynatrace Ruxit Agent is bundled with the Java buildpack version 3.8 available on PivNet (as of June 2016). The bundled Agent version is 1.95. Dynatrace recommends you to use the latest version of Ruxit Agent so please overwrite the default version to be used with `version: 1.+`. 
+You can bundle the Dynatrace Ruxit Agent with the [Java buildpack version 3.8](https://network.pivotal.io/products/buildpacks) available on PivNet (as of June 2016). Dynatrace recommends that you use the latest version of the Ruxit Agent. Overwrite the default version with `version: 1.+`. 
 
 Future releases of Dynatrace Ruxit for PCF will support Node.js and PHP buildpacks.
 
 ## <a id="feedback"></a>Feedback
 
-Please provide any bugs, feature requests, or questions to the Pivotal Cloud Foundry Feedback list.
+Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback list](mailto:pivotal-cf-feedback@pivotal.io).

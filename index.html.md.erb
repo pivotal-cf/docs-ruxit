@@ -3,24 +3,26 @@ title: Dynatrace Ruxit Service Broker for Pivotal Cloud Foundry&reg;
 owner: Partners
 ---
 
-This documentation describes the Dynatrace Ruxit Service Broker tile for Pivotal Cloud Foundry&reg; (PCF). 
+This documentation describes the Dynatrace Ruxit Service Broker tile for Pivotal Cloud Foundry&reg; (PCF). Dynatrace Ruxit is an application performance monitoring solution for your PCF applications. The Dynatrace Ruxit Service Broker tile registers a service broker and makes its services available on the Marketplace, for binding your applications. 
 
-Dynatrace Ruxit is an application performance monitoring solution that you can use for your PCF applications. The PCF tile for Dynatrace Ruxit installs the Dynatrace Ruxit Service Broker as an application, registers it as a Service Broker on Cloud Foundry, and exposes its service plans on the Marketplace. This simplifies the integration of Dynatrace Ruxit with your Cloud Foundry applications. 
-
-The Dynatrace Ruxit Service Broker tile requires access to an existing Ruxit account. If you do not have a Ruxit account, you can sign up for a 30 day free trial at: http://www.dynatrace.com/en/ruxit/try-now/.
 
 ## <a id="snapshot"></a>Product Snapshot
 
 <dl>
 <dt>Current Dynatrace Ruxit Service Broker tile for Pivotal Cloud Foundry&reg; Details:</dt>
 <dd><strong>Version</strong>: 1.0 </dd>
-<dd><strong>Release Date</strong>: 06-20-2016</dd>
+<dd><strong>Release Date</strong>: 06-21-2016</dd>
 <dd><strong>Software component version</strong>: Dynatrace Ruxit Service Broker 1.0</dd>
-<dd><strong>Compatible Ops Manager Version(s)</strong>: 1.6x, 1.7</dd>
+<dd><strong>Compatible Ops Manager Version(s)</strong>: 1.6x, 1.7x</dd>
 <dd><strong>Compatible Elastic Runtime Version(s)</strong>: 1.4.x, 1.5.x, 1.6.x, 1.7.x</dd>
 <dd><strong>vSphere support?</strong> Yes</dd>
 <dd><strong>AWS support?</strong> Yes</dd>
 </dl>
+
+
+## <a id="upgrade"></a> Upgrade to the Latest Version
+
+Not applicable for version 1.0. See the [Installing Ruxit](./installing.html) topic for installation instructions. 
 
 ## <a id="ruxit"></a>Dynatrace Ruxit 
 
@@ -53,24 +55,17 @@ Dynatrace Ruxit offers multiple views for application and deployment data, inclu
 * Detailed response time contribution breakdown for service methods
 	<%= image_tag "detailed-response-dashboard.png" %>
 
-* Detailed waterfall performance breakdown for webpages.
+* Detailed waterfall performance breakdown for webpages
 	<%= image_tag "waterfall-analytics.png" %>
 
-* Java Managed Memory metrics
+* Java managed memory metrics
 	<%= image_tag "java-managed-memory.png" %>
 
 * Detailed CPU consumption break-down per process
 	<%= image_tag "cpu-consumption.png " %>
 
 
-
-## <a id="upgrade"></a> Upgrade to the Latest Version
-
-Not applicable for version 1.0. See the [Installing Ruxit](./installing.html) topic for installation instructions. 
-
 ## <a id="limitations"></a>Limitations
-
-You can bundle the Dynatrace Ruxit Agent with the [Java buildpack version 3.8](https://network.pivotal.io/products/buildpacks) available on PivNet (as of June 2016). Dynatrace recommends that you use the latest version of the Ruxit Agent. Overwrite the default version with `version: 1.+`. 
 
 Future releases of Dynatrace Ruxit for PCF will support Node.js and PHP buildpacks.
 
